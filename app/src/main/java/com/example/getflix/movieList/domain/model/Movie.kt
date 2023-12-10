@@ -11,7 +11,7 @@ data class Movie(
     val context: String,
     val type: String,
     val actor: List<Actor>,
-    val aggregateRating: AggregateRating,
+//    val aggregateRating: AggregateRating,
     val contentRating: String,
     val creator: List<Creator>,
     val datePublished: String,
@@ -22,6 +22,6 @@ data class Movie(
     val image: String,
     val keywords: String,
     val name: String,
-    val trailer: Trailer,
+//    val trailer: Trailer,
     val url: String
 )

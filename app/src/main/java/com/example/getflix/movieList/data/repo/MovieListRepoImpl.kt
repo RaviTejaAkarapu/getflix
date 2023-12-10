@@ -18,8 +18,7 @@ class MovieListRepoImpl @Inject constructor(
     private val movieDatabase: MovieDatabase
 ) : MovieListRepo {
     override suspend fun getMovieList(
-        forceFetchFromRemote: Boolean,
-        page: Int
+        forceFetchFromRemote: Boolean
     ): Flow<Resource<List<Movie>>> {
         return flow {
             emit(Resource.Loading(isLoading = true))

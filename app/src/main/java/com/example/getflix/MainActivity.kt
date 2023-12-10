@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.getflix.movieList.presenstation.MovieListViewModel
 import com.example.getflix.ui.theme.GetflixTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +20,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HomeScreen()
+            GetflixTheme {
+                HomeScreen()
+            }
         }
     }
 }
@@ -29,22 +33,6 @@ fun HomeScreen() {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-        Greeting("Android")
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    GetflixTheme {
-        Greeting("Android")
+        val movieListViewModel = hiltViewModel<MovieListViewModel>()
     }
 }
